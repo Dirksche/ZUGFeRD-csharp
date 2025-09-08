@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace s2industries.ZUGFeRD.Test
 {
@@ -35,5 +36,23 @@ namespace s2industries.ZUGFeRD.Test
 
             return path.Replace('\\', System.IO.Path.DirectorySeparatorChar);
         } // !_makeSurePathIsCrossPlatformCompatible()
+
+
+        /// <summary>
+        /// Asserts that two strings are equal, using an ordinal comparison, and suppresses detailed failure output.
+        /// </summary>
+        /// <remarks>This method performs a case-sensitive, culture-invariant comparison of the two
+        /// strings. If the strings are not equal, the provided <paramref name="message"/> is displayed in the assertion
+        /// failure.</remarks>
+        /// <param name="expected">The expected string value.</param>
+        /// <param name="actual">The actual string value to compare against the expected value.</param>
+        /// <param name="message">The message to display if the assertion fails.</param>
+        protected void AssertEqualSuppressDetails(string expected, string actual, string message)
+        {
+            if (!string.Equals(expected, actual, StringComparison.Ordinal))
+            {
+                Assert.Fail(message);
+            }
+        }
     }
 }
