@@ -17,18 +17,14 @@
  * under the License.
  */
 /*
- * Class for creating an invoice with SEPA Prenotification.
+ * Class for creating an invoice with direct debit as payment method.
+ * 
  * The created invoice is similar to the invoice "ZUGFeRD-csharp\demodata\zugferd21\zugferd_2p1_EN16931_SEPA_Prenotification.xml".
  */
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace s2industries.ZUGFeRD.Test.InvoiceProviders
 {
-    internal class SEPAPrenotification
+    internal class PaymentMethodDirectDebit
     {
         internal InvoiceDescriptor CreateInvoice()
         {
@@ -94,17 +90,17 @@ namespace s2industries.ZUGFeRD.Test.InvoiceProviders
                                  );
 
             desc.AddTradeLineItem(name: "Joghurt Banane",
-                unitCode: QuantityCodes.H87,
-                sellerAssignedID: "ARNR2",
-                id: new GlobalID(GlobalIDSchemeIdentifiers.EAN, "4000050986428"),
-                grossUnitPrice: 5.5m,
-                netUnitPrice: 5.5m,
-                billedQuantity: 50,
-                lineTotalAmount: 275.0m,
-                taxType: TaxTypes.VAT,
-                categoryCode: TaxCategoryCodes.S,
-                taxPercent: 7
-                );
+                                  unitCode: QuantityCodes.H87,
+                                  sellerAssignedID: "ARNR2",
+                                  id: new GlobalID(GlobalIDSchemeIdentifiers.EAN, "4000050986428"),
+                                  grossUnitPrice: 5.5m,
+                                  netUnitPrice: 5.5m,
+                                  billedQuantity: 50,
+                                  lineTotalAmount: 275.0m,
+                                  taxType: TaxTypes.VAT,
+                                  categoryCode: TaxCategoryCodes.S,
+                                  taxPercent: 7
+                                  );
 
 
             desc.AddApplicableTradeTax(basisAmount: 275.0m,
@@ -129,7 +125,7 @@ namespace s2industries.ZUGFeRD.Test.InvoiceProviders
                           );
 
             desc.AddTradePaymentTerms("Der Betrag in Höhe von EUR 529,87 wird am 20.03.2024 von Ihrem Konto per SEPA-Lastschrift eingezogen.");
-            desc.SetPaymentMeans(PaymentMeansTypeCodes.SEPADirectDebit, "Zahlung per SEPA Bankeinzug.", "DE98ZZZ09999999999", "REF A-123");
+            desc.SetPaymentMeansSepaDirectDebit("DE98ZZZ09999999999", "REF A-123", "Zahlung per SEPA Bankeinzug.");
             desc.AddDebitorFinancialAccount(iban: "DE21860000000086001055", bic: "DBBYLADEM1001", bankName: "VerkäuferDB AG");
 
             return desc;

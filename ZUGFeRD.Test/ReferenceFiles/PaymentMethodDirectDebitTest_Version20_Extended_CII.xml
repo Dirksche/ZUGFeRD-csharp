@@ -148,6 +148,7 @@ Handelsregisternummer: H A 123
     <ram:ApplicableHeaderTradeSettlement>
       <ram:CreditorReferenceID>DE98ZZZ09999999999</ram:CreditorReferenceID>
       <ram:InvoiceCurrencyCode>EUR</ram:InvoiceCurrencyCode>
+      <ram:InvoiceIssuerReference />
       <ram:SpecifiedTradeSettlementPaymentMeans>
         <ram:TypeCode>59</ram:TypeCode>
         <ram:Information>Zahlung per SEPA Bankeinzug.</ram:Information>
