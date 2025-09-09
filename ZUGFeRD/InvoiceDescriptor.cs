@@ -1261,7 +1261,7 @@ namespace s2industries.ZUGFeRD
         /// <param name="taxTypeCode">VAT type code for document level charge</param>
         /// <param name="taxCategoryCode">VAT type code for document level charge</param>
         /// <param name="taxPercent">VAT rate for the charge</param>
-        /// <param name="reasonCode">Reason code for the chargee/param>
+        /// <param name="reasonCode">Reason code for the charge</param>
         [Obsolete("This function has a typo in the function name. Please use `AddTradeCharge` instead.", true)]
         public void AddTradeeCharge(decimal? basisAmount, CurrencyCodes currency, decimal actualAmount, decimal? chargePercentage, string reason, TaxTypes taxTypeCode, TaxCategoryCodes taxCategoryCode, decimal taxPercent, ChargeReasonCodes? reasonCode = null)
         {

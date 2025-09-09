@@ -16,17 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-/*
- * Class for creating an invoice with bank transfer as payment method.
- * 
- * The created invoice is identical to the invoice created by "InvoiceProviders.PaymentMethodDirectDebit.cs",
- * but the payment method is not by direct debit, but by bank transfer.
- */
 
 namespace s2industries.ZUGFeRD.Test.InvoiceProviders
 {
+    /// <summary>
+    /// Class for creating an example invoice with bank transfer as payment method.
+    /// </summary>
     internal class PaymentMethodBankTransfer
     {
+        /// <summary>
+        /// Creates an example invoice with bank transfer as payment method.
+        ///
+        /// The created invoice is identical to the invoice created by "InvoiceProviders.PaymentMethodDirectDebit.cs",
+        /// but the payment method is not by direct debit, but by bank transfer.
+        /// </summary>
+        /// <returns>InvoiceDescriptor which contains the generated invoice</returns>
         internal InvoiceDescriptor CreateInvoice()
         {
             // Wir verwenden als Rechnungsdatum nicht 2018, sondern ein aktuelleres Jahr, um folgende Validierungs-Warnung zu vermeiden:

@@ -16,17 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-/*
- * Class for creating an invoice which includes an article with zero VAT rate.
- * 
- * The created invoice is similar to the invoice created by "InvoiceProviders.PaymentMethodDirectDebit.cs",
- * but contains an additiona article with zero VAT rate.
-*/
 
 namespace s2industries.ZUGFeRD.Test.InvoiceProviders
 {
+    /// <summary>
+    /// Class for creating an example invoice which includes an article with zero VAT rate.
+    /// </summary>
     internal class WithZeroVATRate
     {
+        /// <summary>
+        /// Creates an example invoice which includes an article with zero VAT rate.
+        ///
+        /// The created invoice is similar to the invoice created by "InvoiceProviders.PaymentMethodDirectDebit.cs",
+        /// but contains an additional article with zero VAT rate.
+        /// </summary>
+        /// <returns>InvoiceDescriptor which contains the generated invoice</returns>
         internal InvoiceDescriptor CreateInvoice()
         {
             // Wir verwenden als Rechnungsdatum nicht 2018, sondern ein aktuelleres Jahr, um folgende Validierungs-Warnung zu vermeiden:
