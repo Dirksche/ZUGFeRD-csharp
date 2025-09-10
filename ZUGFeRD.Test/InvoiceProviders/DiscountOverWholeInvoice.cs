@@ -22,7 +22,7 @@ namespace s2industries.ZUGFeRD.Test.InvoiceProviders
     /// <summary>
     /// Class for creating an example invoice with a discount over the whole invoice.
     /// </summary>
-    internal class DscountOverWholeInvoice : InvoiceProviderBase
+    internal class DiscountOverWholeInvoice : InvoiceProviderBase
     {
         /// <summary>
         /// Creates an example invoice with a discount over the whole invoice.

@@ -21,9 +21,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace s2industries.ZUGFeRD.Test.CreateAndCompareAgainstReferenceFile
 {
     [TestClass]
-    public class DscountOverWholeInvoiceTest : TestBase
+    public class DiscountOverWholeInvoiceTest : TestBase
     {
-        private InvoiceProviders.DscountOverWholeInvoice _InvoiceProvider = new InvoiceProviders.DscountOverWholeInvoice();
+        private InvoiceProviders.DiscountOverWholeInvoice _InvoiceProvider = new InvoiceProviders.DiscountOverWholeInvoice();
 
         [DataTestMethod]
 
