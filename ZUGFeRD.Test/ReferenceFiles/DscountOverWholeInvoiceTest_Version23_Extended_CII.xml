@@ -213,16 +213,16 @@ Handelsregisternummer: H A 123
         </ram:PayeePartyCreditorFinancialAccount>
       </ram:SpecifiedTradeSettlementPaymentMeans>
       <ram:ApplicableTradeTax>
-        <ram:CalculatedAmount>14.52</ram:CalculatedAmount>
+        <ram:CalculatedAmount>14.22</ram:CalculatedAmount>
         <ram:TypeCode>VAT</ram:TypeCode>
-        <ram:BasisAmount>207.36</ram:BasisAmount>
+        <ram:BasisAmount>203.21</ram:BasisAmount>
         <ram:CategoryCode>S</ram:CategoryCode>
         <ram:RateApplicablePercent>7.00</ram:RateApplicablePercent>
       </ram:ApplicableTradeTax>
       <ram:ApplicableTradeTax>
-        <ram:CalculatedAmount>12.44</ram:CalculatedAmount>
+        <ram:CalculatedAmount>12.56</ram:CalculatedAmount>
         <ram:TypeCode>VAT</ram:TypeCode>
-        <ram:BasisAmount>65.47</ram:BasisAmount>
+        <ram:BasisAmount>66.11</ram:BasisAmount>
         <ram:CategoryCode>S</ram:CategoryCode>
         <ram:RateApplicablePercent>19.00</ram:RateApplicablePercent>
       </ram:ApplicableTradeTax>
@@ -230,7 +230,7 @@ Handelsregisternummer: H A 123
         <ram:ChargeIndicator>
           <udt:Indicator>false</udt:Indicator>
         </ram:ChargeIndicator>
-        <ram:ActualAmount>1.99</ram:ActualAmount>
+        <ram:ActualAmount>1.35</ram:ActualAmount>
         <ram:Reason>Auftragsrabatt</ram:Reason>
         <ram:CategoryTradeTax>
           <ram:TypeCode>VAT</ram:TypeCode>
@@ -238,16 +238,28 @@ Handelsregisternummer: H A 123
           <ram:RateApplicablePercent>19.00</ram:RateApplicablePercent>
         </ram:CategoryTradeTax>
       </ram:SpecifiedTradeAllowanceCharge>
+      <ram:SpecifiedTradeAllowanceCharge>
+        <ram:ChargeIndicator>
+          <udt:Indicator>false</udt:Indicator>
+        </ram:ChargeIndicator>
+        <ram:ActualAmount>4.15</ram:ActualAmount>
+        <ram:Reason>Auftragsrabatt</ram:Reason>
+        <ram:CategoryTradeTax>
+          <ram:TypeCode>VAT</ram:TypeCode>
+          <ram:CategoryCode>S</ram:CategoryCode>
+          <ram:RateApplicablePercent>7.00</ram:RateApplicablePercent>
+        </ram:CategoryTradeTax>
+      </ram:SpecifiedTradeAllowanceCharge>
       <ram:SpecifiedTradePaymentTerms>
         <ram:Description>Zahlbar innerhalb 30 Tagen netto bis 04.04.2018, 3% Skonto innerhalb 10 Tagen bis 15.03.2018</ram:Description>
       </ram:SpecifiedTradePaymentTerms>
       <ram:SpecifiedTradeSettlementHeaderMonetarySummation>
         <ram:LineTotalAmount>274.82</ram:LineTotalAmount>
-        <ram:AllowanceTotalAmount>1.99</ram:AllowanceTotalAmount>
-        <ram:TaxBasisTotalAmount>272.83</ram:TaxBasisTotalAmount>
-        <ram:TaxTotalAmount currencyID="EUR">26.96</ram:TaxTotalAmount>
-        <ram:GrandTotalAmount>299.79</ram:GrandTotalAmount>
-        <ram:DuePayableAmount>299.79</ram:DuePayableAmount>
+        <ram:AllowanceTotalAmount>5.50</ram:AllowanceTotalAmount>
+        <ram:TaxBasisTotalAmount>269.32</ram:TaxBasisTotalAmount>
+        <ram:TaxTotalAmount currencyID="EUR">26.78</ram:TaxTotalAmount>
+        <ram:GrandTotalAmount>296.10</ram:GrandTotalAmount>
+        <ram:DuePayableAmount>296.10</ram:DuePayableAmount>
       </ram:SpecifiedTradeSettlementHeaderMonetarySummation>
     </ram:ApplicableHeaderTradeSettlement>
   </rsm:SupplyChainTradeTransaction>

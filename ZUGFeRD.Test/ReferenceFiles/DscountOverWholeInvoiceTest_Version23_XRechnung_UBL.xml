@@ -89,7 +89,7 @@ Handelsregisternummer: H A 123
   <cac:AllowanceCharge>
     <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
     <cbc:AllowanceChargeReason>Auftragsrabatt</cbc:AllowanceChargeReason>
-    <cbc:Amount currencyID="EUR">1.99</cbc:Amount>
+    <cbc:Amount currencyID="EUR">1.35</cbc:Amount>
     <cac:TaxCategory>
       <cbc:ID>S</cbc:ID>
       <cbc:Percent>19.00</cbc:Percent>
@@ -98,11 +98,23 @@ Handelsregisternummer: H A 123
       </cac:TaxScheme>
     </cac:TaxCategory>
   </cac:AllowanceCharge>
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReason>Auftragsrabatt</cbc:AllowanceChargeReason>
+    <cbc:Amount currencyID="EUR">4.15</cbc:Amount>
+    <cac:TaxCategory>
+      <cbc:ID>S</cbc:ID>
+      <cbc:Percent>7.00</cbc:Percent>
+      <cac:TaxScheme>
+        <cbc:ID>VAT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:TaxCategory>
+  </cac:AllowanceCharge>
   <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="EUR">26.96</cbc:TaxAmount>
+    <cbc:TaxAmount currencyID="EUR">26.78</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="EUR">207.36</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="EUR">14.52</cbc:TaxAmount>
+      <cbc:TaxableAmount currencyID="EUR">203.21</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="EUR">14.22</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID>S</cbc:ID>
         <cbc:Percent>7.00</cbc:Percent>
@@ -112,8 +124,8 @@ Handelsregisternummer: H A 123
       </cac:TaxCategory>
     </cac:TaxSubtotal>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="EUR">65.47</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="EUR">12.44</cbc:TaxAmount>
+      <cbc:TaxableAmount currencyID="EUR">66.11</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="EUR">12.56</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID>S</cbc:ID>
         <cbc:Percent>19.00</cbc:Percent>
@@ -125,15 +137,16 @@ Handelsregisternummer: H A 123
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="EUR">274.82</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="EUR">272.83</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="EUR">299.79</cbc:TaxInclusiveAmount>
-    <cbc:AllowanceTotalAmount currencyID="EUR">1.99</cbc:AllowanceTotalAmount>
-    <cbc:PayableAmount currencyID="EUR">299.79</cbc:PayableAmount>
+    <cbc:TaxExclusiveAmount currencyID="EUR">269.32</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="EUR">296.10</cbc:TaxInclusiveAmount>
+    <cbc:AllowanceTotalAmount currencyID="EUR">5.50</cbc:AllowanceTotalAmount>
+    <cbc:PayableAmount currencyID="EUR">296.10</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>001</cbc:ID>
     <cbc:Note>My comment</cbc:Note>
     <cbc:InvoicedQuantity unitCode="XPP">3.0000</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="EUR">42.13</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>My description</cbc:Description>
       <cbc:Name>BERLTHYROX 100UG</cbc:Name>
@@ -164,6 +177,7 @@ Handelsregisternummer: H A 123
     <cbc:ID>002</cbc:ID>
     <cbc:Note>My 2. comment</cbc:Note>
     <cbc:InvoicedQuantity unitCode="XPP">10.0000</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="EUR">207.36</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>My 2. description</cbc:Description>
       <cbc:Name>INFECTOTRIMET 100MG</cbc:Name>
@@ -194,6 +208,7 @@ Handelsregisternummer: H A 123
     <cbc:ID>003</cbc:ID>
     <cbc:Note>My 3. comment</cbc:Note>
     <cbc:InvoicedQuantity unitCode="XPP">2.0000</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="EUR">25.33</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Description>My 3. description</cbc:Description>
       <cbc:Name>METOHEXAL-SUCC 23.75MG</cbc:Name>

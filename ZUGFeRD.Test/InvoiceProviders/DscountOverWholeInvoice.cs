@@ -71,6 +71,8 @@ namespace s2industries.ZUGFeRD.Test.InvoiceProviders
                          SubjectCodes.REG);
 
             // add three articles
+            Decimal lineTotalAmount19 = 0;
+            Decimal lineTotalAmount7 = 0;
             {
                 TradeLineItem tradeLineItem = desc.AddTradeLineItem("001",                  // BT-126 Kennung der Rechnungsposition (normalerweise die Rechnungszeilennummer). Wenn nicht angegeben, dann wird diese automatisch vergeben.
                                                                     "BERLTHYROX 100UG",     // BT-153 Artikelname
@@ -98,6 +100,7 @@ namespace s2industries.ZUGFeRD.Test.InvoiceProviders
 
                 tradeLineItem.AddApplicableProductCharacteristic("Package size", "100 St");
                 tradeLineItem.AddApplicableProductCharacteristic("Dosage form", "Tablets");
+                lineTotalAmount19 += Math.Round(14.0439m * 3, 2);
             }
             {
                 TradeLineItem tradeLineItem = desc.AddTradeLineItem("002",                  // BT-126 Kennung der Rechnungsposition (normalerweise die Rechnungszeilennummer). Wenn nicht angegeben, dann wird diese automatisch vergeben.
@@ -126,6 +129,7 @@ namespace s2industries.ZUGFeRD.Test.InvoiceProviders
 
                 tradeLineItem.AddApplicableProductCharacteristic("Package size", "50 St");
                 tradeLineItem.AddApplicableProductCharacteristic("Dosage form", "Tablets");
+                lineTotalAmount7 += Math.Round(20.7357m * 10, 2);
             }
             {
                 TradeLineItem tradeLineItem = desc.AddTradeLineItem("003",                  // BT-126 Kennung der Rechnungsposition (normalerweise die Rechnungszeilennummer). Wenn nicht angegeben, dann wird diese automatisch vergeben.
@@ -154,15 +158,16 @@ namespace s2industries.ZUGFeRD.Test.InvoiceProviders
 
                 tradeLineItem.AddApplicableProductCharacteristic("Package size", "100 St");
                 tradeLineItem.AddApplicableProductCharacteristic("Dosage form", "Retard tablets");
+                lineTotalAmount19 += Math.Round(12.6666m * 2, 2);
             }
 
-            // add discount
-            // NOTE: If you have items with different VAT rates in your invoice and you want to give a dscount
-            //       on the whole invoice, you might want to split the whole discount into different parts for
-            //       the different VAT rates.
+            // add a discount of 2 percent
+            // NOTE: If you have items with different VAT rates in your invoice and you want to give a discount
+            //       on the whole invoice, you need to specify the discount per VAT rate.
+            Decimal discount19 = Math.Round(lineTotalAmount19 * 0.02m, 2); // 2% discount on all articles with 19% VAT
             desc.AddTradeAllowance(null,
                                    CurrencyCodes.EUR,
-                                   1.99m,
+                                   discount19,
                                    null,
                                    "Auftragsrabatt",
                                    TaxTypes.VAT,
@@ -170,17 +175,28 @@ namespace s2industries.ZUGFeRD.Test.InvoiceProviders
                                    19,
                                    null);
 
+            Decimal discount7 = Math.Round(lineTotalAmount7 * 0.02m, 2); // 2% discount on all articles with 7% VAT
+            desc.AddTradeAllowance(null,
+                                   CurrencyCodes.EUR,
+                                   discount7,
+                                   null,
+                                   "Auftragsrabatt",
+                                   TaxTypes.VAT,
+                                   TaxCategoryCodes.S,
+                                   7,
+                                   null);
+
             // add VAT information
-            Decimal taxAmount7 = Math.Round(207.36m / 100m * 7m, 2, MidpointRounding.AwayFromZero);
-            desc.AddApplicableTradeTax(basisAmount: 207.36m,
+            Decimal taxAmount7 = Math.Round((lineTotalAmount7 - discount7) * 0.07m, 2, MidpointRounding.AwayFromZero);
+            desc.AddApplicableTradeTax(basisAmount: lineTotalAmount7 - discount7,
                                        percent: 7m,
                                        taxAmount: taxAmount7,
                                        typeCode: TaxTypes.VAT,
                                        categoryCode: TaxCategoryCodes.S
                                        );
 
-            Decimal taxAmount19 = Math.Round((42.13m + 25.33m  - 1.99m) / 100m * 19m, 2, MidpointRounding.AwayFromZero);
-            desc.AddApplicableTradeTax(basisAmount: 67.46m - 1.99m,
+            Decimal taxAmount19 = Math.Round((lineTotalAmount19 - discount19) * 0.19m, 2, MidpointRounding.AwayFromZero);
+            desc.AddApplicableTradeTax(basisAmount: lineTotalAmount19 - discount19,
                                        percent: 19m,
                                        taxAmount: taxAmount19,
                                        typeCode: TaxTypes.VAT,
@@ -188,8 +204,8 @@ namespace s2industries.ZUGFeRD.Test.InvoiceProviders
                                        );
 
             // add totals
-            Decimal lineTotal = 207.36m + 67.46m;
-            Decimal allowanceTotal = 1.99m;
+            Decimal lineTotal = lineTotalAmount7 + lineTotalAmount19;
+            Decimal allowanceTotal = discount7 + discount19;
             Decimal taxTotal = taxAmount7 + taxAmount19;
             desc.SetTotals(lineTotalAmount: lineTotal,
                            allowanceTotalAmount: allowanceTotal,

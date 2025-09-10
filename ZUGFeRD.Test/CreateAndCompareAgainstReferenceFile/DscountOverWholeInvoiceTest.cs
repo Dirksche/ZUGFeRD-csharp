@@ -34,11 +34,16 @@ namespace s2industries.ZUGFeRD.Test.CreateAndCompareAgainstReferenceFile
         [DataRow(ZUGFeRDVersion.Version23, Profile.Extended, ZUGFeRDFormats.CII)]
         [DataRow(ZUGFeRDVersion.Version23, Profile.XRechnung, ZUGFeRDFormats.CII)]
 
-        // I'm not testing UBL as much as CII, because I believe that most people will be using CII.
-        // UBL is not supported in ZUGFeRD-PDF files. Therefore, if you plan to embed your e-invoice
-        // in a PDF file to make a ZUGFeRD file, you will have to use CII.
-        // Furthermore, UBL has other limitations. E.g. it doesn't support credit notes. You will
-        // need to use negative invoices instead, when using UBL.
+        // https://www.portinvoice.com/ reports on the UBL version a warning
+        // "Arithmetical issue:Payable total in XML is 296.10, but calculated total
+        //  is 302.16 with tax basis 274.82 and with positions 274.82 = 42.13 + 207.36 + 25.33"
+        // This is only reported by the Mustang validation and not by the Valitool validation,
+        // although the Valitool validation is usually more strict. There's also no such
+        // warning, when validating the CII version. When visualising the CII and UBL versions,
+        // both show the same values for the invoice positions, disounts, totals, tax bases
+        // and tax amounts.
+        // I believe this is a bug in the Mustang validation and have reported it on 10/09/2025 to
+        // office@obwyse.com (the people behind https://www.portinvoice.com/).
         [DataRow(ZUGFeRDVersion.Version23, Profile.XRechnung, ZUGFeRDFormats.UBL)]
 
         public void CreateAndCompare(ZUGFeRDVersion version, Profile profile, ZUGFeRDFormats format)
