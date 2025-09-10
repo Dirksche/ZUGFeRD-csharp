@@ -165,10 +165,10 @@ namespace s2industries.ZUGFeRD.Test.InvoiceProviders
             // NOTE: If you have items with different VAT rates in your invoice and you want to give a discount
             //       on the whole invoice, you need to specify the discount per VAT rate.
             Decimal discount19 = Math.Round(lineTotalAmount19 * 0.02m, 2); // 2% discount on all articles with 19% VAT
-            desc.AddTradeAllowance(null,
+            desc.AddTradeAllowance(null, // BT-93 The base amount of the allowance is optionally. By purpose, I'm not specifying it here, but specify it below with the 7% (VAT) allowance, in order to test both cases.
                                    CurrencyCodes.EUR,
                                    discount19,
-                                   null,
+                                   null, // BT-94 The percentage of the allowance is optionally. By purpose, I'm not specifying it here, but specify it below with the 7% (VAT) allowance, in order to test both cases.
                                    "Auftragsrabatt",
                                    TaxTypes.VAT,
                                    TaxCategoryCodes.S,
@@ -176,10 +176,10 @@ namespace s2industries.ZUGFeRD.Test.InvoiceProviders
                                    null);
 
             Decimal discount7 = Math.Round(lineTotalAmount7 * 0.02m, 2); // 2% discount on all articles with 7% VAT
-            desc.AddTradeAllowance(null,
+            desc.AddTradeAllowance(lineTotalAmount7, // BT-93 The base amount of the allowance is optionally. By purpose, I'm specifying it here, but don't specify it above with the 19% (VAT) allowance, in order to test both cases.
                                    CurrencyCodes.EUR,
                                    discount7,
-                                   null,
+                                   2, // BT-94 The percentage of the allowance is optionally. By purpose, I'm specifying it here, but don't specify it above with the 19% (VAT) allowance, in order to test both cases.
                                    "Auftragsrabatt",
                                    TaxTypes.VAT,
                                    TaxCategoryCodes.S,

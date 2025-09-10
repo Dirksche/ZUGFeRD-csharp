@@ -101,7 +101,9 @@ Handelsregisternummer: H A 123
   <cac:AllowanceCharge>
     <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
     <cbc:AllowanceChargeReason>Auftragsrabatt</cbc:AllowanceChargeReason>
+    <cbc:MultiplierFactorNumeric>2.00</cbc:MultiplierFactorNumeric>
     <cbc:Amount currencyID="EUR">4.15</cbc:Amount>
+    <cbc:BaseAmount currencyID="EUR">207.36</cbc:BaseAmount>
     <cac:TaxCategory>
       <cbc:ID>S</cbc:ID>
       <cbc:Percent>7.00</cbc:Percent>

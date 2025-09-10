@@ -236,6 +236,7 @@ Handelsregisternummer: H A 123
         <ram:ChargeIndicator>
           <udt:Indicator>false</udt:Indicator>
         </ram:ChargeIndicator>
+        <ram:BasisAmount>207.36</ram:BasisAmount>
         <ram:ActualAmount>4.15</ram:ActualAmount>
         <ram:Reason>Auftragsrabatt</ram:Reason>
         <ram:CategoryTradeTax>
