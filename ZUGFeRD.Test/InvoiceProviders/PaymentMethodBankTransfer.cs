@@ -22,7 +22,7 @@ namespace s2industries.ZUGFeRD.Test.InvoiceProviders
     /// <summary>
     /// Class for creating an example invoice with bank transfer as payment method.
     /// </summary>
-    internal class PaymentMethodBankTransfer
+    internal class PaymentMethodBankTransfer : InvoiceProviderBase
     {
         /// <summary>
         /// Creates an example invoice with bank transfer as payment method.
@@ -31,7 +31,7 @@ namespace s2industries.ZUGFeRD.Test.InvoiceProviders
         /// but the payment method is not by direct debit, but by bank transfer.
         /// </summary>
         /// <returns>InvoiceDescriptor which contains the generated invoice</returns>
-        internal InvoiceDescriptor CreateInvoice()
+        internal override InvoiceDescriptor CreateInvoice()
         {
             // Wir verwenden als Rechnungsdatum nicht 2018, sondern ein aktuelleres Jahr, um folgende Validierungs-Warnung zu vermeiden:
             //    [VD-Valitool-96]-Es existiert kein Prüfprofil, bei dem Standard, Guideline und Gültigkeitsdatum zum Dokument passen.

@@ -22,13 +22,13 @@ namespace s2industries.ZUGFeRD.Test.InvoiceProviders
     /// <summary>
     /// Class for creating an example invoice with a discount over the whole invoice.
     /// </summary>
-    internal class DscountOverWholeInvoice
+    internal class DscountOverWholeInvoice : InvoiceProviderBase
     {
         /// <summary>
         /// Creates an example invoice with a discount over the whole invoice.
         /// </summary>
         /// <returns>InvoiceDescriptor which contains the generated invoice</returns>
-        internal InvoiceDescriptor CreateInvoice()
+        internal override InvoiceDescriptor CreateInvoice()
         {
             InvoiceDescriptor desc = InvoiceDescriptor.CreateInvoice("471102", new DateTime(2024, 03, 05), CurrencyCodes.EUR);
 

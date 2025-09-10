@@ -22,7 +22,7 @@ namespace s2industries.ZUGFeRD.Test.InvoiceProviders
     /// <summary>
     /// Class for creating an example invoice with direct debit as payment method.
     /// </summary>
-    internal class PaymentMethodDirectDebit
+    internal class PaymentMethodDirectDebit : InvoiceProviderBase
     {
         /// <summary>
         /// Creates an example invoice with direct debit as payment method.
@@ -30,7 +30,7 @@ namespace s2industries.ZUGFeRD.Test.InvoiceProviders
         /// The created invoice is similar to the invoice "ZUGFeRD-csharp\demodata\zugferd21\zugferd_2p1_EN16931_SEPA_Prenotification.xml".
         /// </summary>
         /// <returns>InvoiceDescriptor which contains the generated invoice</returns>
-        internal InvoiceDescriptor CreateInvoice()
+        internal override InvoiceDescriptor CreateInvoice()
         {
             // Wir verwenden als Rechnungsdatum nicht 2018, sondern ein aktuelleres Jahr, um folgende Validierungs-Warnung zu vermeiden:
             //    [VD-Valitool-96]-Es existiert kein Prüfprofil, bei dem Standard, Guideline und Gültigkeitsdatum zum Dokument passen.
