@@ -72,7 +72,8 @@ namespace s2industries.ZUGFeRD.Test.InvoiceProviders
 
             // add three articles
             {
-                TradeLineItem tradeLineItem = desc.AddTradeLineItem("BERLTHYROX 100UG",     // BT-153 Artikelname
+                TradeLineItem tradeLineItem = desc.AddTradeLineItem("001",                  // BT-126 Kennung der Rechnungsposition (normalerweise die Rechnungszeilennummer). Wenn nicht angegeben, dann wird diese automatisch vergeben.
+                                                                    "BERLTHYROX 100UG",     // BT-153 Artikelname
                                                                     14.0439m,               // BT-146 der Preis eines Artikels ohne Umsatzsteuer nach Abzug des Nachlass auf den Artikelpreis
                                                                     QuantityCodes.XPP,      // BT-130 Code der Maßeinheit der in Rechnung gestellten Menge
                                                                     "My description",       // BT-154 Artikelbeschreibung
@@ -99,7 +100,8 @@ namespace s2industries.ZUGFeRD.Test.InvoiceProviders
                 tradeLineItem.AddApplicableProductCharacteristic("Dosage form", "Tablets");
             }
             {
-                TradeLineItem tradeLineItem = desc.AddTradeLineItem("INFECTOTRIMET 100MG",  // BT-153 Artikelname
+                TradeLineItem tradeLineItem = desc.AddTradeLineItem("002",                  // BT-126 Kennung der Rechnungsposition (normalerweise die Rechnungszeilennummer). Wenn nicht angegeben, dann wird diese automatisch vergeben.
+                                                                    "INFECTOTRIMET 100MG",  // BT-153 Artikelname
                                                                     20.7357m,               // BT-146 der Preis eines Artikels ohne Umsatzsteuer nach Abzug des Nachlass auf den Artikelpreis
                                                                     QuantityCodes.XPP,      // BT-130 Code der Maßeinheit der in Rechnung gestellten Menge
                                                                     "My 2. description",    // BT-154 Artikelbeschreibung
@@ -126,7 +128,8 @@ namespace s2industries.ZUGFeRD.Test.InvoiceProviders
                 tradeLineItem.AddApplicableProductCharacteristic("Dosage form", "Tablets");
             }
             {
-                TradeLineItem tradeLineItem = desc.AddTradeLineItem("METOHEXAL-SUCC 23.75MG",   // BT-153 Artikelname
+                TradeLineItem tradeLineItem = desc.AddTradeLineItem("003",                  // BT-126 Kennung der Rechnungsposition (normalerweise die Rechnungszeilennummer). Wenn nicht angegeben, dann wird diese automatisch vergeben.
+                                                                    "METOHEXAL-SUCC 23.75MG",   // BT-153 Artikelname
                                                                     12.6666m,               // BT-146 der Preis eines Artikels ohne Umsatzsteuer nach Abzug des Nachlass auf den Artikelpreis
                                                                     QuantityCodes.XPP,      // BT-130 Code der Maßeinheit der in Rechnung gestellten Menge
                                                                     "My 3. description",    // BT-154 Artikelbeschreibung

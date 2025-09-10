@@ -131,7 +131,7 @@ Handelsregisternummer: H A 123
     <cbc:PayableAmount currencyID="EUR">299.79</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
-    <cbc:ID>1</cbc:ID>
+    <cbc:ID>001</cbc:ID>
     <cbc:Note>My comment</cbc:Note>
     <cbc:InvoicedQuantity unitCode="XPP">3.0000</cbc:InvoicedQuantity>
     <cac:Item>
@@ -161,7 +161,7 @@ Handelsregisternummer: H A 123
     </cac:Price>
   </cac:InvoiceLine>
   <cac:InvoiceLine>
-    <cbc:ID>2</cbc:ID>
+    <cbc:ID>002</cbc:ID>
     <cbc:Note>My 2. comment</cbc:Note>
     <cbc:InvoicedQuantity unitCode="XPP">10.0000</cbc:InvoicedQuantity>
     <cac:Item>
@@ -191,7 +191,7 @@ Handelsregisternummer: H A 123
     </cac:Price>
   </cac:InvoiceLine>
   <cac:InvoiceLine>
-    <cbc:ID>3</cbc:ID>
+    <cbc:ID>003</cbc:ID>
     <cbc:Note>My 3. comment</cbc:Note>
     <cbc:InvoicedQuantity unitCode="XPP">2.0000</cbc:InvoicedQuantity>
     <cac:Item>
